@@ -1,7 +1,7 @@
 import React from 'react';
-import {Typography, Grid, Card, CardContent, CardMedia, Divider } from '@material-ui/core';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
-import igti from '../assets/igti.png';
+import {Typography, Card, CardContent, CardMedia, Divider } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+// import igti from '../assets/igti.png';
 import me from '../assets/me.jpg';
 
 const useStyles = makeStyles((theme) => ({
@@ -20,13 +20,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const cardStyle = {
-  display: 'block',
-  width: '30vw',
-  transitionDuration: '0.3s',
-  height: '45vw'
-}
-
 export default function Home() {
   const classes = useStyles();
   return (
@@ -41,10 +34,10 @@ export default function Home() {
                 Patrick Brison Januario
               </Typography>
               <Typography variant="subtitle1" color="textSecondary">
-                <a href="https://github.com/PatrickBJ" target="_blank">Meu GitHub</a>
+                <a href="https://github.com/PatrickBJ" target="_blank" rel='noopener noreferrer'>Meu GitHub</a>
               </Typography>
               <Typography variant="subtitle1" color="textSecondary">
-                <a href="https://www.linkedin.com/in/patrick-brison-januario-02871912a" target="_blank">Meu Linkedln</a>
+                <a href="https://www.linkedin.com/in/patrick-brison-januario-02871912a" target="_blank" rel='noopener noreferrer'>Meu Linkedln</a>
               </Typography>
             </CardContent>
             <CardMedia

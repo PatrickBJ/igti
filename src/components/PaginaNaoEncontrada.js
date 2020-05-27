@@ -8,7 +8,7 @@ const PaginaNaoEncontrada = () =>
     <>
       <Grid container >
         <Grid item xs={12} style={{textAlign: 'center'}}>
-          <img height= "500" style={{marginLeft:"auto", marginRight:"auto", float :"none"}} src={animation}/>
+          <img alt="Not Found" height= "500" style={{marginLeft:"auto", marginRight:"auto", float :"none"}} src={animation}/>
         </Grid>
       </Grid>
     </>

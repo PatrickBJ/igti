@@ -12,7 +12,7 @@ const [listaUsuariosFiltrados, setListaUsuariosFiltrados] = useState([]);
 
 function BuscarUsuario(pesquisa){
   if(listaUsuarios != null && pesquisa != null && pesquisa.length > 0){
-    setListaUsuariosFiltrados(listaUsuarios.filter( (u) => (u.name.first.toLowerCase()+u.name.last.toLowerCase()).includes(pesquisa.toLowerCase())));
+    setListaUsuariosFiltrados(listaUsuarios.filter( (u) => (u.name.first.toLowerCase()+" "+u.name.last.toLowerCase()).includes(pesquisa.toLowerCase())));
   }
   else{
     setListaUsuariosFiltrados([]);
