@@ -23,3 +23,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.gridContainer{
+  margin-top: 3rem;
+}
+
+.gridItem{
+  padding: 1rem;
+}

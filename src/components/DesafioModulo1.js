@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { TextField, Divider, Typography, Grid, ListItemAvatar, Avatar  } from '@material-ui/core';
+import BuscarUsuarios from '../resources/BuscaUsuarios';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-// import dataSet from './dataExample.json';
 
 export default function DesafioModulo1(){
 
@@ -19,25 +19,14 @@ function BuscarUsuario(pesquisa){
   }
  }
 
-async function BuscarUsuarios(){
-  try
-  {
-    const fetchUsuarios = await fetch("https://randomuser.me/api/?seed=javascript&results=100&nat=BR&noinfo");
-    //const usuarios = dataSet;
-    const usuarios = await fetchUsuarios.json();
-    setListaUsuarios(usuarios.results);
+ const fetchData = async () =>{
+  if(listaUsuarios == null){
+    setListaUsuarios(await BuscarUsuarios());
   }
-  catch(ex)
-  {
-    console.log("Erro ao carregar dados");
-  }
-
-}
+ }
 
  useEffect(() => {
-    if(listaUsuarios == null){
-      BuscarUsuarios();
-      }
+  fetchData();
  });
 
 return (

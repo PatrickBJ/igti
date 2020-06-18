@@ -15,4 +15,4 @@ const PaginaNaoEncontrada = () =>
   )
 }
 
-export default PaginaNaoEncontrada
+export default PaginaNaoEncontrada;

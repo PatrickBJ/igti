@@ -16,13 +16,8 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 
-import { Switch, useHistory, Route } from 'react-router-dom'
-import TestCrud from './components/TestCrud'
-import DesafioCor from './components/DesafioCor'
-import HomePage from './components/Home'
-import PaginaNaoEncontrada from './components/PaginaNaoEncontrada'
-import DesafioModulo1 from './components/DesafioModulo1'
-import {AssignmentInd, Home, InvertColors} from '@material-ui/icons';
+import { useHistory } from 'react-router-dom'
+import ComponetRoute, {listaPaginas} from './containers/routes'
 
 const drawerWidth = 240;
 
@@ -89,38 +84,6 @@ export default function App() {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(true);
-  
-  const listaPaginas = [
-    {
-      rota: '/',
-      nome: 'Home',
-      icone: <Home/>,
-      component: HomePage,
-    },
-    {
-      rota: 'TestCrud',
-      nome: 'TestCrud',
-      icone: <AssignmentInd/>,
-      component: TestCrud
-    },
-    // {
-    //   rota: 'TestCrud 2',
-    //   nome: 'TestCrud 2',
-    //   icone: <Home/>,
-    // },
-    {
-      rota: 'DesafioCor',
-      nome: 'Desafio Cor',
-      icone: <InvertColors/>,
-      component: DesafioCor,
-    },
-    {
-      rota: 'DesafioModulo1',
-      nome: 'Desafio Modulo1',
-      icone: <AssignmentInd/>,
-      component: DesafioModulo1
-    }
-  ];
 
   const history = useHistory();
 
@@ -187,13 +150,7 @@ export default function App() {
         })}
       >
         <div className={classes.drawerHeader} />
-          <Switch>
-              <Route path="/" exact={true} component={HomePage} />
-              <Route path="/testCrud" exact={true} component={TestCrud} />
-              <Route path="/desafioCor" exact={true} component={DesafioCor} />
-              <Route path="/desafioModulo1" exact={true} component={DesafioModulo1} />
-              <Route path='*' component={PaginaNaoEncontrada} />
-          </Switch>
+        <ComponetRoute/>
       </main>
     </div>
   );
