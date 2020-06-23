@@ -1,4 +1,4 @@
-const calculaPorcentagem = (value, total) => 
+const calculaPorcentagem = (value, total, parenteses) => 
 {
   if(total == null || total === '' || value == null || value == 0)
     return '';
@@ -6,7 +6,7 @@ const calculaPorcentagem = (value, total) =>
   const valueNumber = parseFloat(value);
   const totalNumber = parseFloat(total);
   const result = ((valueNumber/totalNumber)* 100).toFixed(2).replace(".",",");
-  return `(${result} %)`;
+  return (parenteses == null || parenteses === true) ? `(${result} %)`: `${result} %`;
 }
 
 const converteValor = (value) => 
