@@ -11,11 +11,8 @@ const calculaPorcentagem = (value, total, parenteses) =>
 
 const converteValor = (value) => 
 {
-  if(value == null || value == 0)
-    return "0,00";
-
   const valueNumber = parseFloat(value);
-  const result = valueNumber.toFixed(2).replace(".",",");
+  const result = new Intl.NumberFormat('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2}).format(valueNumber);
   return result;
 }
 
